@@ -1,6 +1,6 @@
 package br.com.tt.bancott.model;
 
-public class Correntista {
+public abstract class Correntista {
 	
 	private String nome;
 	private Conta conta;
@@ -14,5 +14,14 @@ public class Correntista {
 		return String.format("Correntista = [nome=%s,conta = %s]",
 				nome,
 				conta);
+	}
+	public void incluirMovimentoAConta(Movimento movimento) {
+		this.conta.incluirMovimento(movimento);
+	}
+	
+		public Movimento[] listarMovimentosDaConta() {
+		return conta.getMovimentos();
+		
+		
 	}
 }

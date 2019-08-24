@@ -8,37 +8,40 @@ import br.com.tt.bancott.model.Correntista;
 //instância da mesma, no programa
 
 public class BancoDados {
-	
+
 	private static BancoDados instancia;
 	private Correntista[] correntistas;
-	
+
 	private BancoDados() {
-		this.correntistas = new Correntista [100];
-		
+		this.correntistas = new Correntista[100];
+
 	}
-	
+
 	public static BancoDados getInstancia() {
 		if (instancia == null) {
-			instancia  = new BancoDados();
+			instancia = new BancoDados();
 		}
-		
+
 		return instancia;
 	}
-	
-	public void cadastrarCorrentista(Correntista correntista ) {
-		for(int indice = 0; indice < correntistas.length; indice++ ) {
-			
-			if(correntistas[indice] == null) {
+
+	public void cadastrarCorrentista(Correntista correntista) {
+		for (int indice = 0; indice < correntistas.length; indice++) {
+
+			if (correntistas[indice] == null) {
 				correntistas[indice] = correntista;
 				break;
-				}
 			}
+		}
 	}
 
 	public Correntista[] listarTodosCorrentistas() {
-				return correntistas;
+		return correntistas;
 	}
-	
-	
+
+	public Correntista selecionarCorrentista(int indiceCorrentista) {
+		return correntistas[indiceCorrentista];
+
+	}
 
 }
