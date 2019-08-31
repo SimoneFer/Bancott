@@ -2,7 +2,7 @@ package br.com.tt.bancott.view;
 
 import java.util.Scanner;
 
-public class TelaPrincipal {
+public class TelaPrincipal implements Tela {
 
 	public void abrirTela() {
 		Scanner scanner = new Scanner(System.in);
@@ -17,14 +17,15 @@ public class TelaPrincipal {
 
 		switch (opcaoUsuario) {
 		case 1:
-			System.out.println("Tela correntista!");
-			TelaCorrentista telaCorrentista = new TelaCorrentista();
-			telaCorrentista.abrirTela();
+			
+			Tela tela = new TelaCorrentista();
+			tela.abrirTela();
 			break;
 
 		case 2:
-			TelaMovimento telaMovimento = new TelaMovimento();
-			telaMovimento.abrirTela();
+			
+			tela = new TelaMovimento();
+			tela.abrirTela();
 			break;
 
 		case 0:
